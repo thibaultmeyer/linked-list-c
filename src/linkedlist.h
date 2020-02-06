@@ -24,6 +24,8 @@ s_linkedlist *linkedlist_create(void);
 
 void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *item));
 
+void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index);
+
 unsigned int linkedlist_size(s_linkedlist *linked_list);
 
 #endif //LINKEDLIST_H

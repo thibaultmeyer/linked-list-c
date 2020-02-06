@@ -2,17 +2,17 @@
 #include "../src/linkedlist.h"
 
 int test_linkedlist_create_and_destroy(void) {
-    s_linkedlist *list;
-    unsigned int size;
+    s_linkedlist *linked_list = NULL;
+    unsigned int size         = 0;
 
     // Test
-    list = linkedlist_create();
+    linked_list = linkedlist_create();
 
     // Assert
-    size = list->size;
+    size = linked_list->size;
 
     // Free allocated memory
-    linkedlist_destroy(list, NULL);
+    linkedlist_destroy(linked_list, NULL);
 
     return size == 0;
 }

@@ -2,20 +2,20 @@
 #include "../src/linkedlist.h"
 
 int test_linkedlist_size(void) {
-    s_linkedlist *list;
-    unsigned int size;
+    s_linkedlist *linked_list = NULL;
+    unsigned int size         = 0;
 
     // Test
-    list = linkedlist_create();
-    linkedlist_add_front(list, NULL);
-    linkedlist_add_front(list, NULL);
-    linkedlist_add_front(list, NULL);
+    linked_list = linkedlist_create();
+    linkedlist_add_front(linked_list, NULL);
+    linkedlist_add_front(linked_list, NULL);
+    linkedlist_add_front(linked_list, NULL);
 
     // Assert
-    size = linkedlist_size(list);
+    size = linkedlist_size(linked_list);
 
     // Free allocated memory
-    linkedlist_destroy(list, NULL);
+    linkedlist_destroy(linked_list, NULL);
 
     return size == 3;
 }
