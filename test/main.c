@@ -4,6 +4,7 @@
 s_linkedlist_unittest gl_unit_tests[] = {
         {"test_linkedlist_create_and_destroy", &test_linkedlist_create_and_destroy},
         {"test_linkedlist_size",               &test_linkedlist_size},
+        {"test_linkedlist_get",                &test_linkedlist_get},
         {"test_linkedlist_remove",             &test_linkedlist_remove},
         {"test_linkedlist_remove_if_null",     &test_linkedlist_remove_if_null},
         {NULL, NULL},
