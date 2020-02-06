@@ -1,0 +1,15 @@
+language: c
+
+compiler:
+    - gcc
+    - clang
+
+before_script:
+    - mkdir cmake-build-debug
+    - cd cmake-build-debug
+    - cmake -DCMAKE_BUILD_TYPE=Debug ..
+
+script:
+    - make
+    - chmod a+x ./linked-list-c-test
+    - ./linked-list-c-test
