@@ -14,5 +14,5 @@ int test_linkedlist_create_and_destroy(void) {
     // Free allocated memory
     linkedlist_destroy(linked_list, NULL);
 
-    return size == 0;
+    return (size == 0);
 }

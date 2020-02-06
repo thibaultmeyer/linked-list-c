@@ -21,12 +21,12 @@ void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index) {
             free(node);
             linked_list->size -= 1;
 
-            return node->data;
+            return (node->data);
         }
 
         index -= 1;
         node = node->next;
     }
 
-    return NULL;
+    return (NULL);
 }
