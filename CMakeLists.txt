@@ -14,6 +14,7 @@ SET(SOURCE_FILES ${SOURCE_FILES}
         src/linkedlist_add_front.c
         src/linkedlist_create.c
         src/linkedlist_destroy.c
+        src/linkedlist_dump_console.c
         src/linkedlist_get.c
         src/linkedlist_get_back.c
         src/linkedlist_get_front.c

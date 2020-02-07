@@ -26,6 +26,8 @@ s_linkedlist *linkedlist_create(void);
 
 void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *item));
 
+void linkedlist_dump_console(s_linkedlist *linked_list, char *(*fun_render_node_data)(void *data));
+
 void *linkedlist_get(s_linkedlist *linked_list, unsigned int index);
 
 void *linkedlist_get_back(s_linkedlist *linked_list);
