@@ -12,6 +12,8 @@ SET(SOURCE_FILES ${SOURCE_FILES}
         src/linkedlist_create.c
         src/linkedlist_destroy.c
         src/linkedlist_get.c
+        src/linkedlist_get_back.c
+        src/linkedlist_get_front.c
         src/linkedlist_remove.c
         src/linkedlist_remove_if.c
         src/linkedlist_remove_if_null.c
@@ -32,4 +34,4 @@ ADD_LIBRARY(linked-list-c-static STATIC $<TARGET_OBJECTS:linked-list-c-obj>)
 ADD_LIBRARY(linked-list-c-shared SHARED $<TARGET_OBJECTS:linked-list-c-obj>)
 
 # Binary (Unit Tests)
-ADD_EXECUTABLE(linked-list-c-test ${SOURCE_FILES} ${TEST_FILES})
+ADD_EXECUTABLE(linked-list-c-test $<TARGET_OBJECTS:linked-list-c-obj> ${TEST_FILES})

@@ -26,6 +26,10 @@ void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *ite
 
 void *linkedlist_get(s_linkedlist *linked_list, unsigned int index);
 
+void *linkedlist_get_back(s_linkedlist *linked_list);
+
+void *linkedlist_get_front(s_linkedlist *linked_list);
+
 void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index);
 
 void linkedlist_remove_if(s_linkedlist *linked_list, int (*fun_check)(void *data), int (*fun_destroy)(void *data));
