@@ -3,6 +3,11 @@
 
 typedef struct s_linkedlist_node s_linkedlist_node;
 typedef struct s_linkedlist      s_linkedlist;
+typedef enum e_matcher_result    e_matcher_result;
+
+typedef e_matcher_result (*f_matcher)(void *data, void *usr_arg);
+
+typedef int              (*f_destroy_data)(void *);
 
 struct s_linkedlist_node {
     s_linkedlist_node *previous;
@@ -14,6 +19,11 @@ struct s_linkedlist {
     unsigned int      size;
     s_linkedlist_node *head;
     s_linkedlist_node *tail;
+};
+
+enum e_matcher_result {
+    E_MATCHER_RESULT_NOT_MATCH = 0,
+    E_MATCHER_RESULT_MATCH     = 1
 };
 
 void linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data);
@@ -28,6 +38,10 @@ void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *ite
 
 void linkedlist_dump_console(s_linkedlist *linked_list, char *(*fun_render_node_data)(void *data));
 
+void *linkedlist_find_first(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);
+
+void *linkedlist_find_last(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);
+
 void *linkedlist_get(s_linkedlist *linked_list, unsigned int index);
 
 void *linkedlist_get_back(s_linkedlist *linked_list);
@@ -36,7 +50,7 @@ void *linkedlist_get_front(s_linkedlist *linked_list);
 
 void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index);
 
-void linkedlist_remove_if(s_linkedlist *linked_list, int (*fun_check)(void *data), int (*fun_destroy)(void *data));
+void linkedlist_remove_if(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg, f_destroy_data destroy_data);
 
 void linkedlist_remove_if_null(s_linkedlist *linked_list);
 
