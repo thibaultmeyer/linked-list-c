@@ -16,6 +16,8 @@ struct s_linkedlist {
     s_linkedlist_node *tail;
 };
 
+void linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data);
+
 void linkedlist_add_back(s_linkedlist *linked_list, void *data);
 
 void linkedlist_add_front(s_linkedlist *linked_list, void *data);

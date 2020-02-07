@@ -9,6 +9,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 # Source Files
 SET(SOURCE_FILES ${SOURCE_FILES}
+        src/linkedlist_add.c
         src/linkedlist_add_back.c
         src/linkedlist_add_front.c
         src/linkedlist_create.c
@@ -23,6 +24,7 @@ SET(SOURCE_FILES ${SOURCE_FILES}
 
 # Test Files
 SET(TEST_FILES ${TEST_FILES}
+        test/test_linkedlist_add.c
         test/test_linkedlist_create_and_destroy.c
         test/test_linkedlist_get.c
         test/test_linkedlist_remove.c
