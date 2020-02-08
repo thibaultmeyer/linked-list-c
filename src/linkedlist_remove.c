@@ -18,10 +18,12 @@ void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index) {
                 node->next->previous = node->previous;
             }
 
+            void *data_to_return = node->data;
+
             free(node);
             linked_list->size -= 1;
 
-            return (node->data);
+            return (data_to_return);
         }
 
         index -= 1;
