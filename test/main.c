@@ -8,6 +8,7 @@ s_linkedlist_unittest gl_unit_tests[] = {
         {"test_linkedlist_get",                &test_linkedlist_get},
         {"test_linkedlist_remove",             &test_linkedlist_remove},
         {"test_linkedlist_remove_if_null",     &test_linkedlist_remove_if_null},
+        {"test_linkedlist_reverse",            &test_linkedlist_reverse},
         {"test_linkedlist_size",               &test_linkedlist_size},
         {"test_linkedlist_sort",               &test_linkedlist_sort},
         {NULL, NULL},

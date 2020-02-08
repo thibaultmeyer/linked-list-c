@@ -37,6 +37,7 @@ To compile this library, you must ensure that a C compiler and CMake are correct
 | linkedlist_remove         | O(n)        | Removes an item from the list               |
 | linkedlist_remove_if      | O(n)        | Removes the matching items from the list    |
 | linkedlist_remove_if_null | O(n)        | Removes all null items from the list        |
+| linkedlist_reverse        | O(n)        | Reverses the list                           |
 | linkedlist_size           | O(1)        | Retrieves the list size                     |
 | linkedlist_sort           | O(n*n)      | Sorts the list                              |
 

@@ -60,6 +60,8 @@ void linkedlist_remove_if(s_linkedlist *linked_list, f_matcher matcher, void *ma
 
 void linkedlist_remove_if_null(s_linkedlist *linked_list);
 
+void linkedlist_reverse(s_linkedlist *linked_list);
+
 unsigned int linkedlist_size(s_linkedlist *linked_list);
 
 void linkedlist_sort(s_linkedlist *linked_list, f_comparator comparator);

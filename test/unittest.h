@@ -23,6 +23,8 @@ int test_linkedlist_remove(void);
 
 int test_linkedlist_remove_if_null(void);
 
+int test_linkedlist_reverse(void);
+
 int test_linkedlist_size(void);
 
 int test_linkedlist_sort(void);
