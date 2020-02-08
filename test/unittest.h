@@ -23,4 +23,6 @@ int test_linkedlist_remove_if_null(void);
 
 int test_linkedlist_size(void);
 
+int test_linkedlist_sort(void);
+
 #endif //UNITTEST_LINKEDLIST_H

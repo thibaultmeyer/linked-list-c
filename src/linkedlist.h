@@ -5,9 +5,11 @@ typedef struct s_linkedlist_node s_linkedlist_node;
 typedef struct s_linkedlist      s_linkedlist;
 typedef enum e_matcher_result    e_matcher_result;
 
-typedef e_matcher_result (*f_matcher)(void *data, void *usr_arg);
+typedef int              (*f_comparator)(void *data_left, void *data_right);
 
-typedef int              (*f_destroy_data)(void *);
+typedef int              (*f_destroy_data)(void *data);
+
+typedef e_matcher_result (*f_matcher)(void *data, void *usr_arg);
 
 struct s_linkedlist_node {
     s_linkedlist_node *previous;
@@ -55,5 +57,7 @@ void linkedlist_remove_if(s_linkedlist *linked_list, f_matcher matcher, void *ma
 void linkedlist_remove_if_null(s_linkedlist *linked_list);
 
 unsigned int linkedlist_size(s_linkedlist *linked_list);
+
+void linkedlist_sort(s_linkedlist *linked_list, f_comparator comparator);
 
 #endif //LINKEDLIST_H

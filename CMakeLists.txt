@@ -23,7 +23,8 @@ SET(SOURCE_FILES ${SOURCE_FILES}
         src/linkedlist_remove.c
         src/linkedlist_remove_if.c
         src/linkedlist_remove_if_null.c
-        src/linkedlist_size.c)
+        src/linkedlist_size.c
+        src/linkedlist_sort.c)
 
 # Test Files
 SET(TEST_FILES ${TEST_FILES}
@@ -33,6 +34,7 @@ SET(TEST_FILES ${TEST_FILES}
         test/test_linkedlist_remove.c
         test/test_linkedlist_remove_if_null.c
         test/test_linkedlist_size.c
+        test/test_linkedlist_sort.c
         test/main.c)
 
 # Library
