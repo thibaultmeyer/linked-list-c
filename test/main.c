@@ -3,6 +3,7 @@
 
 s_linkedlist_unittest gl_unit_tests[] = {
         {"test_linkedlist_add",                &test_linkedlist_add},
+        {"test_linkedlist_apply",              &test_linkedlist_apply},
         {"test_linkedlist_create_and_destroy", &test_linkedlist_create_and_destroy},
         {"test_linkedlist_get",                &test_linkedlist_get},
         {"test_linkedlist_remove",             &test_linkedlist_remove},

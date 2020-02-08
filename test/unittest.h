@@ -13,6 +13,8 @@ extern s_linkedlist_unittest gl_unit_tests[];
 
 int test_linkedlist_add(void);
 
+int test_linkedlist_apply(void);
+
 int test_linkedlist_create_and_destroy(void);
 
 int test_linkedlist_get(void);

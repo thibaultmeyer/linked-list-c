@@ -5,6 +5,8 @@ typedef struct s_linkedlist_node s_linkedlist_node;
 typedef struct s_linkedlist      s_linkedlist;
 typedef enum e_matcher_result    e_matcher_result;
 
+typedef void             (*f_applier)(void *data, void *usr_arg);
+
 typedef int              (*f_comparator)(void *data_left, void *data_right);
 
 typedef int              (*f_destroy_data)(void *data);
@@ -33,6 +35,8 @@ void linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data);
 void linkedlist_add_back(s_linkedlist *linked_list, void *data);
 
 void linkedlist_add_front(s_linkedlist *linked_list, void *data);
+
+void linkedlist_apply(s_linkedlist *linked_list, f_applier applier, void *applier_arg);
 
 s_linkedlist *linkedlist_create(void);
 
