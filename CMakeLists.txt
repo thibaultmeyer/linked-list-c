@@ -16,6 +16,7 @@ SET(SOURCE_FILES ${SOURCE_FILES}
         src/linkedlist_create.c
         src/linkedlist_destroy.c
         src/linkedlist_dump_console.c
+        src/linkedlist_dump_dotgraph.c
         src/linkedlist_find_first.c
         src/linkedlist_find_last.c
         src/linkedlist_get.c
