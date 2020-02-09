@@ -19,6 +19,10 @@ int test_linkedlist_create_and_destroy(void);
 
 int test_linkedlist_get(void);
 
+int test_linkedlist_iterator_next(void);
+
+int test_linkedlist_iterator_previous(void);
+
 int test_linkedlist_remove(void);
 
 int test_linkedlist_remove_if_null(void);

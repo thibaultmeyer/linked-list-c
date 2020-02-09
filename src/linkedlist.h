@@ -1,9 +1,10 @@
 #ifndef LINKEDLIST_H
 # define LINKEDLIST_H
 
-typedef struct s_linkedlist_node s_linkedlist_node;
-typedef struct s_linkedlist      s_linkedlist;
-typedef enum e_matcher_result    e_matcher_result;
+typedef struct s_linkedlist_iterator s_linkedlist_iterator;
+typedef struct s_linkedlist_node     s_linkedlist_node;
+typedef struct s_linkedlist          s_linkedlist;
+typedef enum e_matcher_result        e_matcher_result;
 
 typedef void             (*f_applier)(void *data, void *usr_arg);
 
@@ -12,6 +13,10 @@ typedef int              (*f_comparator)(void *data_left, void *data_right);
 typedef int              (*f_destroy_data)(void *data);
 
 typedef e_matcher_result (*f_matcher)(void *data, void *usr_arg);
+
+struct s_linkedlist_iterator {
+    s_linkedlist_node *current_node;
+};
 
 struct s_linkedlist_node {
     s_linkedlist_node *previous;
@@ -55,6 +60,14 @@ void *linkedlist_get(s_linkedlist *linked_list, unsigned int index);
 void *linkedlist_get_back(s_linkedlist *linked_list);
 
 void *linkedlist_get_front(s_linkedlist *linked_list);
+
+s_linkedlist_iterator *linkedlist_iterator_create(s_linkedlist *linked_list);
+
+void linkedlist_iterator_destroy(s_linkedlist_iterator *linked_list_iterator);
+
+int linkedlist_iterator_has_next(s_linkedlist_iterator *linked_list_iterator);
+
+void *linkedlist_iterator_next(s_linkedlist_iterator *linked_list_iterator);
 
 void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index);
 

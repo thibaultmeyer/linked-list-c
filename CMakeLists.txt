@@ -22,6 +22,10 @@ SET(SOURCE_FILES ${SOURCE_FILES}
         src/linkedlist_get.c
         src/linkedlist_get_back.c
         src/linkedlist_get_front.c
+        src/linkedlist_iterator_create.c
+        src/linkedlist_iterator_destroy.c
+        src/linkedlist_iterator_has_next.c
+        src/linkedlist_iterator_next.c
         src/linkedlist_remove.c
         src/linkedlist_remove_if.c
         src/linkedlist_remove_if_null.c
@@ -35,6 +39,7 @@ SET(TEST_FILES ${TEST_FILES}
         test/test_linkedlist_apply.c
         test/test_linkedlist_create_and_destroy.c
         test/test_linkedlist_get.c
+        test/test_linkedlist_iterator_next.c
         test/test_linkedlist_remove.c
         test/test_linkedlist_remove_if_null.c
         test/test_linkedlist_reverse.c
