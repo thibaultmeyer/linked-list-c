@@ -11,4 +11,12 @@ before_script:
 script:
     - make
     - chmod a+x ./linked-list-c-test
-    - ./linked-list-c-test
+    - valgrind ./linked-list-c-test
+
+addons:
+    apt:
+        packages:
+            - valgrind
+
+env:
+    - VALGRIND_OPTS='--leak-check=full --leak-resolution=med --track-origins=yes --show-leak-kinds=all --vgdb=no'
