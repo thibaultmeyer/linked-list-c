@@ -1,5 +1,7 @@
 #ifndef LINKEDLIST_H
 # define LINKEDLIST_H
+# define LINKEDLIST_RETVAL_SUCCESS 0
+# define LINKEDLIST_RETVAL_FAILURE -1
 
 typedef struct s_linkedlist_iterator s_linkedlist_iterator;
 typedef struct s_linkedlist_node     s_linkedlist_node;
@@ -35,11 +37,11 @@ enum e_matcher_result {
     E_MATCHER_RESULT_MATCH     = 1
 };
 
-void linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data);
+int linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data);
 
-void linkedlist_add_back(s_linkedlist *linked_list, void *data);
+int linkedlist_add_back(s_linkedlist *linked_list, void *data);
 
-void linkedlist_add_front(s_linkedlist *linked_list, void *data);
+int linkedlist_add_front(s_linkedlist *linked_list, void *data);
 
 void linkedlist_apply(s_linkedlist *linked_list, f_applier applier, void *applier_arg);
 

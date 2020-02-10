@@ -2,8 +2,12 @@
 #include <memory.h>
 #include "linkedlist.h"
 
-void linkedlist_add_back(s_linkedlist *linked_list, void *data) {
+int linkedlist_add_back(s_linkedlist *linked_list, void *data) {
     s_linkedlist_node *node = malloc(sizeof(s_linkedlist_node));
+    if (node == NULL) {
+        return (LINKEDLIST_RETVAL_FAILURE);
+    }
+
     memset(node, 0, sizeof(s_linkedlist_node));
 
     node->data = data;
@@ -21,4 +25,6 @@ void linkedlist_add_back(s_linkedlist *linked_list, void *data) {
     }
 
     linked_list->size += 1;
+
+    return (LINKEDLIST_RETVAL_SUCCESS);
 }
