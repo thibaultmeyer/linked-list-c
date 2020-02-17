@@ -30,6 +30,7 @@ To compile this library, you must ensure that a C compiler and CMake are correct
 | linkedlist_destroy           | O(n)        | Destroys an existing list                   |
 | linkedlist_dump_console      | O(n)        | Shows all items in the list                 |
 | linkedlist_dump_dotgraph     | O(n)        | Shows all items in the list (DOT graph)     |
+| linkedlist_find              | O(n)        | Finds all matching items in the list        |
 | linkedlist_find_first        | O(n)        | Finds the first matching item in the list   |
 | linkedlist_find_last         | O(n)        | Finds the last matching item in the list    |
 | linkedlist_get               | O(n)        | Retrieves an item from the list             |

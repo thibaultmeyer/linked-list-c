@@ -53,6 +53,8 @@ void linkedlist_dump_console(s_linkedlist *linked_list, char *(*fun_render_node_
 
 void linkedlist_dump_dotgraph(s_linkedlist *linked_list, char *(*fun_render_node_data)(void *data), int file_desc);
 
+s_linkedlist *linkedlist_find(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);
+
 void *linkedlist_find_first(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);
 
 void *linkedlist_find_last(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);

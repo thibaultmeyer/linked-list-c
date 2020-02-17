@@ -17,6 +17,7 @@ SET(SOURCE_FILES ${SOURCE_FILES}
         src/linkedlist_destroy.c
         src/linkedlist_dump_console.c
         src/linkedlist_dump_dotgraph.c
+        src/linkedlist_find.c
         src/linkedlist_find_first.c
         src/linkedlist_find_last.c
         src/linkedlist_get.c
@@ -38,6 +39,9 @@ SET(TEST_FILES ${TEST_FILES}
         test/test_linkedlist_add.c
         test/test_linkedlist_apply.c
         test/test_linkedlist_create_and_destroy.c
+        test/test_linkedlist_find.c
+        test/test_linkedlist_find_first.c
+        test/test_linkedlist_find_last.c
         test/test_linkedlist_get.c
         test/test_linkedlist_iterator_next.c
         test/test_linkedlist_remove.c

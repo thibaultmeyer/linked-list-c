@@ -17,6 +17,12 @@ int test_linkedlist_apply(void);
 
 int test_linkedlist_create_and_destroy(void);
 
+int test_linkedlist_find(void);
+
+int test_linkedlist_find_first(void);
+
+int test_linkedlist_find_last(void);
+
 int test_linkedlist_get(void);
 
 int test_linkedlist_iterator_next(void);
