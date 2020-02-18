@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../src/linkedlist.h"
+#include "unittest.h"
 
 static void fun_free_memory(void *data) {
     free(data);
@@ -22,7 +23,7 @@ int test_linkedlist_iterator_next(void) {
     if (linkedlist_iterator_has_next(linked_list_iterator) == 1) {
         data = linkedlist_iterator_next(linked_list_iterator);
 
-        if (strcmp("apple", data) != 0) {
+        if (strcmp_with_s2_nullcheck("apple", data) != 0) {
             error += 1;
         }
     } else {
@@ -32,7 +33,7 @@ int test_linkedlist_iterator_next(void) {
     if (linkedlist_iterator_has_next(linked_list_iterator) == 1) {
         data = linkedlist_iterator_next(linked_list_iterator);
 
-        if (strcmp("banana", data) != 0) {
+        if (strcmp_with_s2_nullcheck("banana", data) != 0) {
             error += 1;
         }
     } else {
@@ -42,7 +43,7 @@ int test_linkedlist_iterator_next(void) {
     if (linkedlist_iterator_has_next(linked_list_iterator) == 1) {
         data = linkedlist_iterator_next(linked_list_iterator);
 
-        if (strcmp("clementine", data) != 0) {
+        if (strcmp_with_s2_nullcheck("clementine", data) != 0) {
             error += 1;
         }
     } else {

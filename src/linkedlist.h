@@ -65,6 +65,8 @@ void *linkedlist_get_back(s_linkedlist *linked_list);
 
 void *linkedlist_get_front(s_linkedlist *linked_list);
 
+int linkedlist_merge(s_linkedlist *linked_list_to, s_linkedlist *linked_list_from);
+
 s_linkedlist_iterator *linkedlist_iterator_create(s_linkedlist *linked_list);
 
 void linkedlist_iterator_destroy(s_linkedlist_iterator *linked_list_iterator);

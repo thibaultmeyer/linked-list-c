@@ -10,6 +10,7 @@ s_linkedlist_unittest gl_unit_tests[] = {
         {"test_linkedlist_find_last",          &test_linkedlist_find_last},
         {"test_linkedlist_get",                &test_linkedlist_get},
         {"test_linkedlist_iterator_next",      &test_linkedlist_iterator_next},
+        {"test_linkedlist_merge",              &test_linkedlist_merge},
         {"test_linkedlist_remove",             &test_linkedlist_remove},
         {"test_linkedlist_remove_if_null",     &test_linkedlist_remove_if_null},
         {"test_linkedlist_reverse",            &test_linkedlist_reverse},

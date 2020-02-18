@@ -11,6 +11,8 @@ struct s_linkedlist_unittest {
 
 extern s_linkedlist_unittest gl_unit_tests[];
 
+int strcmp_with_s2_nullcheck(const char *s1, const char *s2);
+
 int test_linkedlist_add(void);
 
 int test_linkedlist_apply(void);
@@ -27,7 +29,7 @@ int test_linkedlist_get(void);
 
 int test_linkedlist_iterator_next(void);
 
-int test_linkedlist_iterator_previous(void);
+int test_linkedlist_merge(void);
 
 int test_linkedlist_remove(void);
 

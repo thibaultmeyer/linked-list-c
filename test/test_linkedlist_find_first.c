@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../src/linkedlist.h"
+#include "unittest.h"
 
 static void fun_free_memory(void *data) {
     free(data);
@@ -24,7 +25,7 @@ int test_linkedlist_find_first(void) {
     data = linkedlist_find_first(linked_list, &fun_matcher_len_six, NULL);
 
     // Assert
-    if (strcmp("banana", data) != 0) {
+    if (strcmp_with_s2_nullcheck("banana", data) != 0) {
         error += 1;
     }
 

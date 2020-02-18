@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../src/linkedlist.h"
+#include "unittest.h"
 
 static void fun_free_memory(void *data) {
     free(data);
@@ -27,13 +28,13 @@ int test_linkedlist_find(void) {
     if (linkedlist_size(results) != 3) {
         error += 1;
     }
-    if (strcmp("banana", linkedlist_get(results, 0)) != 0) {
+    if (strcmp_with_s2_nullcheck("banana", linkedlist_get(results, 0)) != 0) {
         error += 1;
     }
-    if (strcmp("durian", linkedlist_get(results, 1)) != 0) {
+    if (strcmp_with_s2_nullcheck("durian", linkedlist_get(results, 1)) != 0) {
         error += 1;
     }
-    if (strcmp("feijoa", linkedlist_get(results, 2)) != 0) {
+    if (strcmp_with_s2_nullcheck("feijoa", linkedlist_get(results, 2)) != 0) {
         error += 1;
     }
 
