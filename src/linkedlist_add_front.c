@@ -2,7 +2,7 @@
 #include <memory.h>
 #include "linkedlist.h"
 
-int linkedlist_add_front(s_linkedlist *linked_list, void *data) {
+int linkedlist_add_front(s_linkedlist *linked_list, void *element) {
     s_linkedlist_node *node = malloc(sizeof(s_linkedlist_node));
     if (node == NULL) {
         return (LINKEDLIST_RETVAL_FAILURE);
@@ -10,7 +10,7 @@ int linkedlist_add_front(s_linkedlist *linked_list, void *data) {
 
     memset(node, 0, sizeof(s_linkedlist_node));
 
-    node->data = data;
+    node->element = element;
 
     if (linked_list->head == NULL) {
         linked_list->head = node;

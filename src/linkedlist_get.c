@@ -6,7 +6,7 @@ void *linkedlist_get(s_linkedlist *linked_list, unsigned int index) {
 
     while (node != NULL) {
         if (index == 0) {
-            return (node->data);
+            return (node->element);
         }
 
         index -= 1;

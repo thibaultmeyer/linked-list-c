@@ -5,8 +5,8 @@ void *linkedlist_find_last(s_linkedlist *linked_list, f_matcher matcher, void *m
     s_linkedlist_node *node = linked_list->tail;
 
     while (node != NULL) {
-        if (matcher(node->data, matcher_arg) == E_MATCHER_RESULT_MATCH) {
-            return node->data;
+        if (matcher(node->element, matcher_arg) == E_MATCHER_RESULT_MATCH) {
+            return node->element;
         }
 
         node = node->previous;

@@ -3,12 +3,12 @@
 #include "../src/linkedlist.h"
 #include "unittest.h"
 
-static void fun_free_memory(void *data) {
-    free(data);
+static void fun_free_memory(void *element) {
+    free(element);
 }
 
-static int fun_comparator_sort_ascending(void *data_left, void *data_right) {
-    return strcmp(data_left, data_right);
+static int fun_comparator_sort_ascending(void *element_left, void *element_right) {
+    return strcmp(element_left, element_right);
 }
 
 int test_linkedlist_sort(void) {

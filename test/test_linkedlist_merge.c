@@ -3,8 +3,8 @@
 #include "../src/linkedlist.h"
 #include "unittest.h"
 
-static void fun_free_memory(void *data) {
-    free(data);
+static void fun_free_memory(void *element) {
+    free(element);
 }
 
 int test_linkedlist_merge(void) {

@@ -20,33 +20,33 @@ To compile this library, you must ensure that a C compiler and CMake are correct
 
 ## Available functions
 
-| Function                     | Complexity  | Description                                     |
-| ---------------------------- | ----------- | ----------------------------------------------- |
-| linkedlist_add               | O(n)        | Adds item anywhere in the list                  |
-| linkedlist_add_front         | O(1)        | Adds item at the beginning of the list          |
-| linkedlist_add_back          | O(1)        | Adds item at the end of the list                |
-| linkedlist_apply             | O(n)        | Applies processing to all items in the list     |
-| linkedlist_create            | O(1)        | Creates a new list                              |
-| linkedlist_destroy           | O(n)        | Destroys an existing list                       |
-| linkedlist_dump_console      | O(n)        | Shows all items in the list                     |
-| linkedlist_dump_dotgraph     | O(n)        | Shows all items in the list (DOT graph)         |
-| linkedlist_find              | O(n)        | Finds all matching items in the list            |
-| linkedlist_find_first        | O(n)        | Finds the first matching item in the list       |
-| linkedlist_find_last         | O(n)        | Finds the last matching item in the list        |
-| linkedlist_get               | O(n)        | Retrieves an item from the list                 |
-| linkedlist_get_back          | O(1)        | Retrieves the last item in the list             |
-| linkedlist_get_front         | O(1)        | Retrieves the first item in the list            |
-| linkedlist_iterator_create   | O(1)        | Creates an iterator for the given list          |
-| linkedlist_iterator_destroy  | O(1)        | Destroys an existing iterator                   |
-| linkedlist_iterator_has_next | O(1)        | Checks if iterator has a next item              |
-| linkedlist_iterator_next     | O(1)        | Retrieves the next item                         |
-| linkedlist_merge             | O(n)        | Merge all items from a list into another list   |
-| linkedlist_remove            | O(n)        | Removes an item from the list                   |
-| linkedlist_remove_if         | O(n)        | Removes the matching items from the list        |
-| linkedlist_remove_if_null    | O(n)        | Removes all null items from the list            |
-| linkedlist_reverse           | O(n)        | Reverses the list                               |
-| linkedlist_size              | O(1)        | Retrieves the list size                         |
-| linkedlist_sort              | O(n*n)      | Sorts the list                                  |
+| Function                     | Complexity  | Description                                                             |
+| ---------------------------- | ----------- | ----------------------------------------------------------------------- |
+| linkedlist_add               | O(n)        | Adds an element to the linked list                                      |
+| linkedlist_add_front         | O(1)        | Adds an element at the end of the linked list                           |
+| linkedlist_add_back          | O(1)        | Adds an element at the beginning of the linked list                     |
+| linkedlist_apply             | O(n)        | Applies a function to all the elements of the linked list               |
+| linkedlist_create            | O(1)        | Creates a new linked list                                               |
+| linkedlist_destroy           | O(n)        | Destroys an existing linked list                                        |
+| linkedlist_dump_console      | O(n)        | Dump a linked list in standard output (STDOUT)                          |
+| linkedlist_dump_dotgraph     | O(n)        | Dump a linked list into a "DOT graph" file                              |
+| linkedlist_find              | O(n)        | Find one or more elements in the linked list                            |
+| linkedlist_find_first        | O(n)        | Find the first matching element in the linked list                      |
+| linkedlist_find_last         | O(n)        | Find the last matching element in the linked list                       |
+| linkedlist_get               | O(n)        | Retrieves a specific element from the linked list                       |
+| linkedlist_get_back          | O(1)        | Retrieves the last element of the linked list                           |
+| linkedlist_get_front         | O(1)        | Retrieves the first element of the linked list                          |
+| linkedlist_iterator_create   | O(1)        | Creates an iterator for the given linked list                           |
+| linkedlist_iterator_destroy  | O(1)        | Destroys an existing iterator                                           |
+| linkedlist_iterator_has_next | O(1)        | Check if the iteration has more elements                                |
+| linkedlist_iterator_next     | O(1)        | Retrieves the next element                                              |
+| linkedlist_merge             | O(n)        | Merges two linked lists. The "target" linked list is the first argument |
+| linkedlist_remove            | O(n)        | Removes the element at the specified position in the linked list        |
+| linkedlist_remove_if         | O(n)        | Removes all matching elements from a linked list                        |
+| linkedlist_remove_if_null    | O(n)        | Removes all NULL elements from a linked list                            |
+| linkedlist_reverse           | O(n)        | Reverse the elements of the linked list                                 |
+| linkedlist_size              | O(1)        | Retrieves the number of elements in the linked list                     |
+| linkedlist_sort              | O(n*n)      | Sort a linked list                                                      |
 
 
 

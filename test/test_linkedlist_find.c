@@ -3,12 +3,12 @@
 #include "../src/linkedlist.h"
 #include "unittest.h"
 
-static void fun_free_memory(void *data) {
-    free(data);
+static void fun_free_memory(void *element) {
+    free(element);
 }
 
-static e_matcher_result fun_matcher_len_six(void *data_left, void *data_right) {
-    return strlen(data_left) == 6 ? E_MATCHER_RESULT_MATCH : E_MATCHER_RESULT_NOT_MATCH;
+static e_matcher_result fun_matcher_len_six(void *element_left, void *element_right) {
+    return strlen(element_left) == 6 ? E_MATCHER_RESULT_MATCH : E_MATCHER_RESULT_NOT_MATCH;
 }
 
 int test_linkedlist_find(void) {

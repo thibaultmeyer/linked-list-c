@@ -2,10 +2,10 @@
 #include "linkedlist.h"
 
 static inline void linkedlistnode_swap(s_linkedlist_node *n1, s_linkedlist_node *n2) {
-    void *tmp = n1->data;
+    void *tmp = n1->element;
 
-    n1->data = n2->data;
-    n2->data = tmp;
+    n1->element = n2->element;
+    n2->element = tmp;
 }
 
 void linkedlist_sort(s_linkedlist *linked_list, f_comparator comparator) {
@@ -18,7 +18,7 @@ void linkedlist_sort(s_linkedlist *linked_list, f_comparator comparator) {
         swapped = 0;
 
         while (node->next != lptr) {
-            if (comparator(node->data, node->next->data) > 0) {
+            if (comparator(node->element, node->next->element) > 0) {
                 linkedlistnode_swap(node, node->next);
                 swapped = 1;
             }

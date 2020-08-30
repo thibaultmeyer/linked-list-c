@@ -3,7 +3,7 @@
 
 void *linkedlist_get_front(s_linkedlist *linked_list) {
     if (linked_list->head != NULL) {
-        return (linked_list->head->data);
+        return (linked_list->head->element);
     }
 
     return (NULL);

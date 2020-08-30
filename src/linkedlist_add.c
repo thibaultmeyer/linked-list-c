@@ -2,11 +2,11 @@
 #include <memory.h>
 #include "linkedlist.h"
 
-int linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data) {
+int linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *element) {
     s_linkedlist_node *node = linked_list->head;
 
     if (index == 0) {
-        return linkedlist_add_front(linked_list, data);
+        return linkedlist_add_front(linked_list, element);
     } else {
         while (node != NULL) {
             if (index == 0) {
@@ -17,7 +17,7 @@ int linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data) {
 
                 memset(node_to_insert, 0, sizeof(s_linkedlist_node));
 
-                node_to_insert->data     = data;
+                node_to_insert->element  = element;
                 node_to_insert->previous = node->previous;
                 node_to_insert->next     = node;
                 if (node->previous != NULL) {

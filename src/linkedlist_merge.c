@@ -10,7 +10,7 @@ int linkedlist_merge(s_linkedlist *linked_list_to, s_linkedlist *linked_list_to_
     }
 
     while (linked_list_node_tmp != NULL) {
-        if (linkedlist_add_back(linked_list_tmp, linked_list_node_tmp->data) == LINKEDLIST_RETVAL_FAILURE) {
+        if (linkedlist_add_back(linked_list_tmp, linked_list_node_tmp->element) == LINKEDLIST_RETVAL_FAILURE) {
             linkedlist_destroy(linked_list_tmp, NULL);
 
             return (LINKEDLIST_RETVAL_FAILURE);

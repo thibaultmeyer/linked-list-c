@@ -10,8 +10,8 @@ s_linkedlist *linkedlist_find(s_linkedlist *linked_list, f_matcher matcher, void
     }
 
     while (node != NULL) {
-        if (matcher(node->data, matcher_arg) == E_MATCHER_RESULT_MATCH) {
-            linkedlist_add_back(linked_list_result, node->data);
+        if (matcher(node->element, matcher_arg) == E_MATCHER_RESULT_MATCH) {
+            linkedlist_add_back(linked_list_result, node->element);
         }
 
         node = node->next;

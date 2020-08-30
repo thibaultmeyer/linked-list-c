@@ -3,12 +3,12 @@
 #include "../src/linkedlist.h"
 #include "unittest.h"
 
-static void fun_free_memory(void *data) {
-    free(data);
+static void fun_free_memory(void *element) {
+    free(element);
 }
 
-static void fun_applier_uppercase(void *data, void *usr_arg) {
-    char *word = data;
+static void fun_applier_uppercase(void *element, void *usr_arg) {
+    char *word = element;
 
     for (int idx = 0; word[idx] != '\0'; ++idx) {
         if (word[idx] >= 'a' && word[idx] <= 'z') {

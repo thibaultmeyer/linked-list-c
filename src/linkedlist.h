@@ -3,18 +3,18 @@
 # define LINKEDLIST_RETVAL_SUCCESS 0
 # define LINKEDLIST_RETVAL_FAILURE (-1)
 
+typedef enum e_matcher_result        e_matcher_result;
 typedef struct s_linkedlist_iterator s_linkedlist_iterator;
 typedef struct s_linkedlist_node     s_linkedlist_node;
 typedef struct s_linkedlist          s_linkedlist;
-typedef enum e_matcher_result        e_matcher_result;
 
-typedef void             (*f_applier)(void *data, void *usr_arg);
+typedef void             (*f_applier)(void *element, void *usr_arg);
 
-typedef int              (*f_comparator)(void *data_left, void *data_right);
+typedef int              (*f_comparator)(void *element_left, void *element_right);
 
-typedef int              (*f_destroy_data)(void *data);
+typedef int              (*f_destroy_element)(void *element);
 
-typedef e_matcher_result (*f_matcher)(void *data, void *usr_arg);
+typedef e_matcher_result (*f_matcher)(void *element, void *usr_arg);
 
 struct s_linkedlist_iterator {
     s_linkedlist_node *current_node;
@@ -23,7 +23,7 @@ struct s_linkedlist_iterator {
 struct s_linkedlist_node {
     s_linkedlist_node *previous;
     s_linkedlist_node *next;
-    void              *data;
+    void              *element;
 };
 
 struct s_linkedlist {
@@ -38,35 +38,35 @@ enum e_matcher_result {
 };
 
 /**
- * Adds an item to an existing linked list.
+ * Adds an element to the linked list.
  *
  * @param linked_list the linked list in which to add the element
  * @param index index at which the specified element is to be added
- * @param data the data to add
+ * @param element the element to add
  * @return 0 in case of success, otherwise -1
  */
-int linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *data);
+int linkedlist_add(s_linkedlist *linked_list, unsigned int index, void *element);
 
 /**
- * Add an item at the end of an existing linked list.
+ * Adds an element at the end of the linked list.
  *
  * @param linked_list the linked list in which to add the element
- * @param data the data to add
+ * @param element the element to add
  * @return 0 in case of success, otherwise -1
  */
-int linkedlist_add_back(s_linkedlist *linked_list, void *data);
+int linkedlist_add_back(s_linkedlist *linked_list, void *element);
 
 /**
- * Adding an item at the beginning of an existing linked list.
+ * Adds an element at the beginning of the linked list.
  *
  * @param linked_list the linked list in which to add the element
- * @param data the data to add
+ * @param element the element to add
  * @return 0 in case of success, otherwise -1
  */
-int linkedlist_add_front(s_linkedlist *linked_list, void *data);
+int linkedlist_add_front(s_linkedlist *linked_list, void *element);
 
 /**
- * Applies a function to all the elements of a linked list.
+ * Applies a function to all the elements of the linked list.
  *
  * @param linked_list the linked list to use
  * @param applier the function to apply on each element
@@ -83,31 +83,31 @@ void linkedlist_apply(s_linkedlist *linked_list, f_applier applier, void *applie
 s_linkedlist *linkedlist_create(void);
 
 /**
- * Destroys a linked list. The second parameter is optional and could be NULL.
+ * Destroys an existing linked list. The second parameter is optional and could be NULL.
  *
  * @param linked_list the linked list to destroy
  * @param fun_on_each the function to be applied to each element before destroying them
  */
-void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *item));
+void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *element));
 
 /**
  * Dump a linked list in standard output (STDOUT).
  *
  * @param linked_list the linked list to dump
- * @param fun_render_node_data function to use to render each element
+ * @param fun_render_node_element function to use to render each element
  */
-void linkedlist_dump_console(s_linkedlist *linked_list, char *(*fun_render_node_data)(void *data));
+void linkedlist_dump_console(s_linkedlist *linked_list, char *(*fun_render_node_element)(void *element));
 
 /**
- * Dump a linked list into a "dotgraph" file.
+ * Dump a linked list into a "DOT graph" file.
  *
  * @param linked_list the linked list to dump
- * @param fun_render_node_data function to use to render each element
+ * @param fun_render_node_element function to use to render each element
  */
-void linkedlist_dump_dotgraph(s_linkedlist *linked_list, char *(*fun_render_node_data)(void *data), int file_desc);
+void linkedlist_dump_dotgraph(s_linkedlist *linked_list, char *(*fun_render_node_element)(void *element), int file_desc);
 
 /**
- * Find one or more items in a linked list.
+ * Find one or more elements in the linked list.
  *
  * @param linked_list the linked list in which to perform the search
  * @param matcher the matcher function
@@ -117,7 +117,7 @@ void linkedlist_dump_dotgraph(s_linkedlist *linked_list, char *(*fun_render_node
 s_linkedlist *linkedlist_find(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);
 
 /**
- * Find the first matching element in a linked list.
+ * Find the first matching element in the linked list.
  *
  * @param linked_list the linked list in which to perform the search
  * @param matcher the matcher function
@@ -127,7 +127,7 @@ s_linkedlist *linkedlist_find(s_linkedlist *linked_list, f_matcher matcher, void
 void *linkedlist_find_first(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg);
 
 /**
- * Find the last matching element in a linked list.
+ * Find the last matching element in the linked list.
  *
  * @param linked_list the linked list in which to perform the search
  * @param matcher the matcher function
@@ -146,11 +146,11 @@ void *linkedlist_find_last(s_linkedlist *linked_list, f_matcher matcher, void *m
 void *linkedlist_get(s_linkedlist *linked_list, unsigned int index);
 
 /**
-* Retrieves the last element of the linked list.
-*
-* @param linked_list the linked list
-* @return the last element of the linked list, otherwise NULL
-*/
+ * Retrieves the last element of the linked list.
+ *
+ * @param linked_list the linked list
+ * @return the last element of the linked list, otherwise NULL
+ */
 void *linkedlist_get_back(s_linkedlist *linked_list);
 
 /**
@@ -171,7 +171,7 @@ void *linkedlist_get_front(s_linkedlist *linked_list);
 int linkedlist_merge(s_linkedlist *linked_list_to, s_linkedlist *linked_list_from);
 
 /**
- * Creates an iterator. This function will return
+ * Creates an iterator for the given linked list. This function will return
  * NULL if a memory allocation error occurs.
  *
  * @param linked_list the linked list
@@ -180,7 +180,7 @@ int linkedlist_merge(s_linkedlist *linked_list_to, s_linkedlist *linked_list_fro
 s_linkedlist_iterator *linkedlist_iterator_create(s_linkedlist *linked_list);
 
 /**
- * Destroys a specific iterator.
+ * Destroys an existing iterator.
  *
  * @param linked_list_iterator the iterator to destroy
  */
@@ -219,9 +219,9 @@ void *linkedlist_remove(s_linkedlist *linked_list, unsigned int index);
  * @param linked_list the linked list
  * @param matcher the matcher function
  * @param matcher_arg the matcher function argument
- * @param destroy_data the function applied before the element removed
+ * @param destroy_element the function applied before the element removed
  */
-void linkedlist_remove_if(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg, f_destroy_data destroy_data);
+void linkedlist_remove_if(s_linkedlist *linked_list, f_matcher matcher, void *matcher_arg, f_destroy_element destroy_elmt);
 
 /**
  * Removes all NULL elements from a linked list.
@@ -231,7 +231,7 @@ void linkedlist_remove_if(s_linkedlist *linked_list, f_matcher matcher, void *ma
 void linkedlist_remove_if_null(s_linkedlist *linked_list);
 
 /**
- * Reverse the elements of a linked list.
+ * Reverse the elements of the linked list.
  *
  * @param linked_list the linked list to reverse
  */
