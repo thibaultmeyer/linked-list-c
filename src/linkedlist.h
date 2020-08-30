@@ -1,7 +1,7 @@
 #ifndef LINKEDLIST_H
 # define LINKEDLIST_H
 # define LINKEDLIST_RETVAL_SUCCESS 0
-# define LINKEDLIST_RETVAL_FAILURE -1
+# define LINKEDLIST_RETVAL_FAILURE (-1)
 
 typedef struct s_linkedlist_iterator s_linkedlist_iterator;
 typedef struct s_linkedlist_node     s_linkedlist_node;
