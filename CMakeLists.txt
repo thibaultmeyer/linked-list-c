@@ -45,6 +45,8 @@ SET(TEST_FILES ${TEST_FILES}
         test/test_linkedlist_find_first.c
         test/test_linkedlist_find_last.c
         test/test_linkedlist_get.c
+        test/test_linkedlist_get_back.c
+        test/test_linkedlist_get_front.c
         test/test_linkedlist_iterator_next.c
         test/test_linkedlist_merge.c
         test/test_linkedlist_remove.c
