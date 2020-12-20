@@ -23,13 +23,15 @@ s_linkedlist_unittest gl_unit_tests[] = {
 };
 
 int main(int argc, char **argv) {
+    (void) argc;  // Unused parameter
+    (void) argv;  // Unused parameter
+
     unsigned int idx           = 0;
-    int          ret           = 0;
     int          success_count = 0;
     int          error_count   = 0;
 
     while (gl_unit_tests[idx].name != NULL) {
-        ret = gl_unit_tests[idx].fun_unit_test();
+        int ret = gl_unit_tests[idx].fun_unit_test();
         printf("[%s] %s\n", ret == 1 ? "PASS" : "FAIL", gl_unit_tests[idx].name);
 
         if (ret == 1) {

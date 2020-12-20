@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "linkedlist.h"
 
-void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *element)) {
+void linkedlist_destroy(s_linkedlist *linked_list, void (*fun_on_each)(void *)) {
     s_linkedlist_node *current_entry = linked_list->head;
     s_linkedlist_node *to_delete     = NULL;
 
