@@ -162,11 +162,19 @@ void *linkedlist_get_back(s_linkedlist *linked_list);
 void *linkedlist_get_front(s_linkedlist *linked_list);
 
 /**
+ * Check if linked list is empty.
+ *
+ * @param linked_list  the linked list
+ * @return 1 if the linked list is empty, otherwise, 0
+ */
+int linkedlist_is_empty(s_linkedlist *linked_list);
+
+/**
  * Merges two linked lists. The "target" linked list is the first argument.
  *
  * @param linked_list_to the first linked list
  * @param linked_list_from the second linked list
- * @return
+ * @return 0 in case of success, otherwise -1
  */
 int linkedlist_merge(s_linkedlist *linked_list_to, s_linkedlist *linked_list_from);
 

@@ -36,6 +36,7 @@ To compile this library, you must ensure that a C compiler and CMake are correct
 | linkedlist_get               | O(n)        | Retrieves a specific element from the linked list                       |
 | linkedlist_get_back          | O(1)        | Retrieves the last element of the linked list                           |
 | linkedlist_get_front         | O(1)        | Retrieves the first element of the linked list                          |
+| linkedlist_is_empty          | O(1)        | Check if the linked list is empty                                       |
 | linkedlist_iterator_create   | O(1)        | Creates an iterator for the given linked list                           |
 | linkedlist_iterator_destroy  | O(1)        | Destroys an existing iterator                                           |
 | linkedlist_iterator_has_next | O(1)        | Check if the iteration has more elements                                |

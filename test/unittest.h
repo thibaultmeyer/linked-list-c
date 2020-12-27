@@ -31,6 +31,8 @@ int test_linkedlist_get_back(void);
 
 int test_linkedlist_get_front(void);
 
+int test_linkedlist_is_empty(void);
+
 int test_linkedlist_iterator_next(void);
 
 int test_linkedlist_merge(void);
