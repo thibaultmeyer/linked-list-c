@@ -60,6 +60,10 @@ SET(TEST_FILES ${TEST_FILES}
         test/test_linkedlist_sort.c
         test/main.c)
 
+# Test
+ENABLE_TESTING()
+ADD_TEST(linked-list-c linked-list-c-test)
+
 # Library
 ADD_LIBRARY(linked-list-c-obj OBJECT ${SOURCE_FILES})
 ADD_LIBRARY(linked-list-c-static STATIC $<TARGET_OBJECTS:linked-list-c-obj>)
