@@ -15,6 +15,10 @@ int strcmp_with_s2_nullcheck(const char *s1, const char *s2);
 
 int test_linkedlist_add(void);
 
+int test_linkedlist_add_back(void);
+
+int test_linkedlist_add_front(void);
+
 int test_linkedlist_apply(void);
 
 int test_linkedlist_create_and_destroy(void);

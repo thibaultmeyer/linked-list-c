@@ -40,6 +40,8 @@ SET(SOURCE_FILES ${SOURCE_FILES}
 SET(TEST_FILES ${TEST_FILES}
         test/strcmp_with_s2_nullcheck.c
         test/test_linkedlist_add.c
+        test/test_linkedlist_add_back.c
+        test/test_linkedlist_add_front.c
         test/test_linkedlist_apply.c
         test/test_linkedlist_create_and_destroy.c
         test/test_linkedlist_find.c
