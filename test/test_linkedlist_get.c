@@ -30,6 +30,9 @@ int test_linkedlist_get(void) {
     if (strcmp_with_s2_nullcheck("clementine", linkedlist_get(linked_list, 2)) != 0) {
         error += 1;
     }
+    if (linkedlist_get(linked_list, 9999) != NULL) {
+        error += 1;
+    }
 
     // Free allocated memory
     linkedlist_destroy(linked_list, &fun_free_memory);
